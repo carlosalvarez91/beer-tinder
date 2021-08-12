@@ -37,7 +37,7 @@ export default function App () {
   const getBeers = () =>{
     let req = new XMLHttpRequest();
     req.onreadystatechange = () => {
-      if (req.readyState == XMLHttpRequest.DONE) {
+      if (req.readyState === XMLHttpRequest.DONE) {
         setBeers(JSON.parse(req.responseText))
       }
     };
@@ -65,7 +65,7 @@ export default function App () {
         )}
         {last && <h3>No more beers</h3>}
       </div>
-      {lastDirection ? <h2 className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText' />}
+      {lastDirection && <h2 className='infoText'>You swiped {lastDirection}</h2>}
     </div>
   )
 }
